@@ -1,0 +1,4 @@
+/* Using this dataset, show the SQL query that provides January 31's rolling 3 day average of total transaction amount processed per day */
+Select SUM(transaction_amount) AS total, SUM(transaction_amount)/3 AS average
+FROM transactions 
+WHERE DATE(transaction_time) IN ('2021-01-31', '2021-01-30', '2021-01-29');
